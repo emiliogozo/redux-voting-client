@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 import Winner from './Winner';
 
 class Results extends PureComponent {
@@ -10,7 +11,7 @@ class Results extends PureComponent {
           {this.getPair().map(entry =>
             <div key={entry} className="entry">
               <h1>{entry}</h1>
-              <div class="voteCount">
+              <div className="voteCount">
                 {this.getVotes(entry)}
               </div>
             </div>
@@ -37,4 +38,12 @@ class Results extends PureComponent {
   }
 }
 
-export default Results;
+const mapStateToProps = (state) => ({
+  pair: state.getIn(['vote', 'pair']),
+  tally: state.getIn(['vote', 'tally']),
+  winner: state.get('winner')
+})
+
+const ResultsContainer = connect(mapStateToProps)(Results);
+
+export { Results, ResultsContainer };
