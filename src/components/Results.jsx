@@ -22,7 +22,7 @@ class Results extends PureComponent {
             className="next"
             onClick={this.props.next}>
             Next
-        </button>
+          </button>
         </div>
       </div>
     );
@@ -42,7 +42,7 @@ const mapStateToProps = (state) => ({
   pair: state.getIn(['vote', 'pair']),
   tally: state.getIn(['vote', 'tally']),
   winner: state.get('winner')
-})
+});
 
 const ResultsContainer = connect(mapStateToProps)(Results);
 

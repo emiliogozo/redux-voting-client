@@ -18,7 +18,7 @@ class Voting extends PureComponent {
 const mapStateToProps = (state) => ({
   pair: state.getIn(['vote', 'pair']),
   winner: state.get('winner')
-})
+});
 
 const VotingContainer = connect(mapStateToProps)(Voting);
 

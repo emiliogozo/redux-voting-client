@@ -1,10 +1,5 @@
-import React, { Component } from 'react';
-import { List, Map } from 'immutable';
+import React from 'react';
 
-class App extends Component {
-  render() {
-    return this.props.children;
-  }
-}
+const App = ({ children }) => children;
 
 export default App;
